@@ -1,13 +1,13 @@
- Where n is a positive integer, the function f(n) satisfies the following: 
- f(0)=0
- f(1)=1
- f(n)=f(n-1)+f(n-2)
- (a) Please create a program to find f(n). (You can write in any language that you are good at.) 
+ // Where n is a positive integer, the function f(n) satisfies the following: 
+ //f(0)=0
+ //f(1)=1
+ //f(n)=f(n-1)+f(n-2)
+ //(a) Please create a program to find f(n). (You can write in any language that you are good at.) 
 
  
-public class Navisens {
+public class Q1 {
 
-	public static String solve(int n){
+	public String solve(int n){
 	 	if(n<0) return "Not a postive integer";
 	 	if(n==0) return "0";
 	 	if(n==-1) return "1";
@@ -24,7 +24,9 @@ public class Navisens {
 
 	 	return printToString(res);
 	 }
-	public static String printToString(ListNode node){
+	 //turn the reverse-order LinkedList back to normal-order String form.
+	 // ex : 8--->2  =====> 28
+	public String printToString(ListNode node){
 		ListNode cur = node;
 		StringBuffer sb = new StringBuffer();
 		while(cur!=null){
@@ -33,7 +35,10 @@ public class Navisens {
 		}
 		return sb.reverse().toString();
 	}
-	public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+	// Add up two numbers by turning the number into reverse order as a Linkedlist
+	// ex: 18+10 = 28
+	// 8-->1 + 0-->1 = 8--->2
+	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
         ListNode res = new ListNode(0);
         if(l1==null || l2==null) return res;
@@ -65,10 +70,12 @@ public class Navisens {
         return start.next;
         
     }
-	public static class ListNode {
+	public class ListNode {
 	     int val;
 	     ListNode next;
-	     ListNode(int x) { val = x; }
+	     ListNode(int val) {
+	     	this.val = val;
+	  	 }
 	 }
 	
 }
